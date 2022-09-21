@@ -2,8 +2,8 @@ import java.util.Random;
 
 public class HashFunctions {
 
-	private int C;		// The largest possible key that can be hashed.
-	private int size;	// The size of the hash table.
+	private int C; // The largest possible key that can be hashed.
+	private int size; // The size of the hash table.
 	Random rand;
 
 	public HashFunctions(int s) {
@@ -17,11 +17,13 @@ public class HashFunctions {
 	}
 
 	public int hash2(int k) {
+		// System.out.println("Size = " + size);
+		// System.out.println("C = " + C);
 		return (int) (k * ((double) size / C));
 	}
 
 	public int hash3(int k) {
-		return (int) (((2971L * k + 101923L) % 128189L)  % (long) size);
+		return (int) (((2971L * k + 101923L) % 128189L) % (long) size);
 	}
 
 	public int hash4(int k) {
