@@ -1,5 +1,6 @@
 import java.lang.Integer;
 import java.lang.Math;
+import java.util.Random;
 
 public class Prog {
 	public static HashFunctions hash = null;
@@ -58,8 +59,7 @@ public class Prog {
 			// System.out.println("output of hash2 = " + output);
 			double fl = Math.floor(output);
 			// System.out.println("floor value is " + fl);
-			int result = (int) fl;
-			if (result == 0) {
+			if ((int) fl == 0) {
 				// Print out only those keys which have the same output (zero)
 				System.out.println(i);
 			}
@@ -69,10 +69,28 @@ public class Prog {
 	private static void prog3(int n) {
 		// TODO: Code to generate n keys that all get hashed to
 		// the same index using hash3.
+		int max = n * n;
+		for (int i = 0; i < max; ++i) {
+			int modulo = hash.hash3(i);
+			if (modulo == 0) {
+				// Print out only those keys which have the same output (zero)
+				System.out.println(i);
+			}
+		}
 	}
 
 	private static void prog4(int n) {
 		// TODO: Code to generate n keys that all get hashed to
 		// the same index using hash4.
+		int max = n * n;
+		int test = 0;// Test key
+		test = hash.hash4(n);
+		for (int i = 0; i < max; ++i) {
+			// Get random key and compare to the test key
+			if (((hash.hash4(i))) == test) {
+				// Print out only those keys which have the same output (zero)
+				System.out.println(i);
+			}
+		}
 	}
 }
