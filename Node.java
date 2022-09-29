@@ -1,9 +1,9 @@
 public class Node {
-	public int object;
+	public int key;
 	public Node next;
 
-	public Node (int o, Node n) {
-		object = o;
+	public Node (int k, Node n) {
+		key = k;
 		next = n;
 	}
 }  
